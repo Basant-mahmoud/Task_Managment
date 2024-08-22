@@ -20,6 +20,7 @@ namespace Task_Managment
         {
             InitializeComponent();
             LoadTeamMembers();
+            this.BackColor = Color.FromArgb(227, 242, 253);
         }
 
         private void comboBoxTeamMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +83,23 @@ namespace Task_Managment
             string taskStatus = checkedComboxAddStatus.Text.Trim();
             DateTime dueDate = AdddateTimePicker1.Value;
             int selectedMemberId = Convert.ToInt32(comboBoxaddteammember.SelectedValue);
+            if (string.IsNullOrEmpty(taskName))
+            {
+                MessageBox.Show("Please enter a task name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(taskStatus))
+            {
+                MessageBox.Show("Please select a task status.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (selectedMemberId == null)
+            {
+                MessageBox.Show("Please select a valid team member.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string query = "INSERT INTO Task (TaskName, Status, DueDate, MemberId) VALUES (@TaskName, @Status, @DueDate, @MemberId)";
             SqlParameter[] parameters = {
