@@ -56,6 +56,11 @@
             this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.teammember = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.deletetask = new DevExpress.XtraEditors.SimpleButton();
+            this.detetetask = new System.Windows.Forms.TextBox();
+            this.addmember = new DevExpress.XtraEditors.SimpleButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.membername = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.treeListTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboxAddStatus.Properties)).BeginInit();
@@ -81,7 +86,7 @@
             this.treeListTasks.CustomizationFormBounds = new System.Drawing.Rectangle(477, 254, 321, 331);
             this.treeListTasks.Location = new System.Drawing.Point(131, 24);
             this.treeListTasks.Name = "treeListTasks";
-            this.treeListTasks.Size = new System.Drawing.Size(596, 94);
+            this.treeListTasks.Size = new System.Drawing.Size(578, 65);
             this.treeListTasks.TabIndex = 1;
             this.treeListTasks.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListTasks_FocusedNodeChanged);
             // 
@@ -367,11 +372,94 @@
             this.comboBox1.TabIndex = 23;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // deletetask
+            // 
+            this.deletetask.Appearance.BackColor = System.Drawing.Color.Red;
+            this.deletetask.Appearance.BorderColor = System.Drawing.Color.Black;
+            this.deletetask.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.deletetask.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.deletetask.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.deletetask.Appearance.Options.UseBackColor = true;
+            this.deletetask.Appearance.Options.UseBorderColor = true;
+            this.deletetask.Appearance.Options.UseFont = true;
+            this.deletetask.Appearance.Options.UseForeColor = true;
+            this.deletetask.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletetask.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.deletetask.AppearanceDisabled.Options.UseFont = true;
+            this.deletetask.AppearanceDisabled.Options.UseForeColor = true;
+            this.deletetask.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.deletetask.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.deletetask.AppearanceHovered.Options.UseBackColor = true;
+            this.deletetask.AppearanceHovered.Options.UseForeColor = true;
+            this.deletetask.Location = new System.Drawing.Point(4, 188);
+            this.deletetask.Name = "deletetask";
+            this.deletetask.Size = new System.Drawing.Size(130, 29);
+            this.deletetask.TabIndex = 24;
+            this.deletetask.Text = "Delete Task";
+            this.deletetask.Click += new System.EventHandler(this.deletetask_Click_2);
+            // 
+            // detetetask
+            // 
+            this.detetetask.Location = new System.Drawing.Point(140, 193);
+            this.detetetask.Name = "detetetask";
+            this.detetetask.Size = new System.Drawing.Size(145, 23);
+            this.detetetask.TabIndex = 25;
+            this.detetetask.TextChanged += new System.EventHandler(this.datetetask_TextChanged);
+            // 
+            // addmember
+            // 
+            this.addmember.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.addmember.Appearance.BorderColor = System.Drawing.Color.Black;
+            this.addmember.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.addmember.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.addmember.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.addmember.Appearance.Options.UseBackColor = true;
+            this.addmember.Appearance.Options.UseBorderColor = true;
+            this.addmember.Appearance.Options.UseFont = true;
+            this.addmember.Appearance.Options.UseForeColor = true;
+            this.addmember.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addmember.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.addmember.AppearanceDisabled.Options.UseFont = true;
+            this.addmember.AppearanceDisabled.Options.UseForeColor = true;
+            this.addmember.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.addmember.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.addmember.AppearanceHovered.Options.UseBackColor = true;
+            this.addmember.AppearanceHovered.Options.UseForeColor = true;
+            this.addmember.Location = new System.Drawing.Point(4, 95);
+            this.addmember.Name = "addmember";
+            this.addmember.Size = new System.Drawing.Size(130, 29);
+            this.addmember.TabIndex = 26;
+            this.addmember.Text = "Add Member";
+            this.addmember.Click += new System.EventHandler(this.addmember_Click_2);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(157, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 16);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "    Member Name";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // membername
+            // 
+            this.membername.Location = new System.Drawing.Point(279, 103);
+            this.membername.Name = "membername";
+            this.membername.Size = new System.Drawing.Size(145, 23);
+            this.membername.TabIndex = 28;
+            this.membername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 390);
+            this.Controls.Add(this.membername);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.addmember);
+            this.Controls.Add(this.detetetask);
+            this.Controls.Add(this.deletetask);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.treeList1);
             this.Controls.Add(this.label5);
@@ -433,6 +521,11 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
         private DevExpress.XtraTreeList.Columns.TreeListColumn teammember;
         private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraEditors.SimpleButton deletetask;
+        private System.Windows.Forms.TextBox detetetask;
+        private DevExpress.XtraEditors.SimpleButton addmember;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox membername;
     }
 }
 
